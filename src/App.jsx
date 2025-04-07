@@ -1,13 +1,27 @@
-import { useState } from 'react';
-
-import './App.css';
+import "./App.css";
+import About from "./component/About";
+import Appointments from "./component/Appointments";
+import ContectSection from "./component/ContectSection";
+import Contectus from "./component/Contectus";
+import Footer from "./component/Footer";
+import Hero from "./component/Hero";
+import Product from "./component/Product";
+import Subscribe from "./component/Subscribe";
+import Testimonials from "./component/Testimonials";
+// import Home from "./Page/Home";
 
 function App() {
   return (
     <>
-      <h1 class='text-3xl font-bold underline text-center mt-14 py-14 bg-stone-600'>
-        Hello world!
-      </h1>
+      {/* <Home /> */}
+      <Hero />
+      <About />
+      <Testimonials /> 
+      <Appointments />
+      <Product />
+      <Contectus />
+      <Footer />
+      <Subscribe />
     </>
   );
 }
