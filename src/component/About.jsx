@@ -1,11 +1,10 @@
 import React from "react";
 import it from "../assets/itPartner/itPartner.jpg";
 const About = () => {
-
-return(
+  return (
     <>
-          {/* About Section */}
-          <section className="py-16 bg-white px-4 md:px-20">
+      {/* About Section */}
+      <section className="py-16 bg-white px-4 md:px-20">
         <h2 className="text-2xl md:text-3xl text-center text-blue-900 font-semibold mb-8 relative">
           <span className="inline-block border-t border-b border-blue-500 px-4 py-2">
             About Greekology - Your IT Partner
@@ -34,6 +33,6 @@ return(
         </div>
       </section>
     </>
-)
-}
+  );
+};
 export default About;

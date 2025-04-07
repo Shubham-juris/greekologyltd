@@ -7,7 +7,7 @@ const Subscribe = () => {
         className="text-white py-20 px-4 md:px-20 bg-cover bg-center"
         style={{
           backgroundImage:
-            "url('')",
+            "url('	https://img.freepik.com/free-vector/futuristic-tec…uit-line-background-web-innovation_1017-53927.jpg')",
         }}
       >
         <div className="max-w-2xl mx-auto text-center">
@@ -16,10 +16,11 @@ const Subscribe = () => {
             Sign up to hear from us about specials, sales, and events.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <span className="mb-6 text-lg">Email</span>
             <input
               type="email"
               placeholder="Email"
-              className="w-full sm:w-2/3 px-4 py-3 rounded-md text-gray-800 focus:outline-none border border-black"
+              className="w-full sm:w-2/3 px-4 py-3 rounded-md text-gray-800 focus:outline-none border border-white "
             />
             <button className="bg-blue-900 hover:bg-blue-800 transition px-6 py-3 rounded-md font-semibold">
               Sign up

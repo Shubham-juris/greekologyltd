@@ -1,9 +1,9 @@
 import React from "react";
 const Footer = () => {
-    return(
-<>
-     {/* Footer Contact Section */}
-     <section className="bg-white py-16 px-4 md:px-20 text-center">
+  return (
+    <>
+      {/* Footer Contact Section */}
+      <section className="bg-white py-16 px-4 md:px-20 text-center">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">
           Questions or Comments?
         </h2>
@@ -54,9 +54,7 @@ const Footer = () => {
           </div>
         </div>
       </section>
-
-     
-</>
-    )
-}
+    </>
+  );
+};
 export default Footer;

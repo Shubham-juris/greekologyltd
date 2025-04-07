@@ -1,9 +1,9 @@
 import React from "react";
 import ITSolutions from "../assets/itSolutions/itSolutions.jpg";
 const Appointments = () => {
-    return(
-<>
-    {/* Appointments & Welcome Section */}
+  return (
+    <>
+      {/* Appointments & Welcome Section */}
       <section className="bg-gray-100 py-16 px-4 md:px-20">
         <h2 className="text-2xl md:text-3xl text-center text-blue-900 font-semibold mb-8 relative">
           <span className="inline-block border-t border-b border-blue-500 px-4 py-2">
@@ -55,7 +55,7 @@ const Appointments = () => {
           Find out more
         </button>
       </section>
-</>
-    )
-}
+    </>
+  );
+};
 export default Appointments;

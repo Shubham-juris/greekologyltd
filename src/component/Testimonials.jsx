@@ -1,16 +1,16 @@
 import React from "react";
 const Testimonials = () => {
-    return(
-        <>
+  return (
+    <>
       {/* Testimonials Section */}
       <section
         className="py-20 text-white text-center bg-cover bg-center"
         style={{
           backgroundImage:
-            'url("")',
+            'url("https://codetheweb.blog/assets/img/posts/css-advanced-background-images/cover.jpg")',
         }}
       >
-        <div className="bg-black/50 py-20 px-6">
+        <div className=" py-20 px-6">
           <h2 className="text-3xl md:text-4xl font-semibold mb-6">
             Discover What Our Clients Say About Greekology!
           </h2>
@@ -19,7 +19,7 @@ const Testimonials = () => {
           </div>
         </div>
       </section>
-      </>
-    )
-}
+    </>
+  );
+};
 export default Testimonials;

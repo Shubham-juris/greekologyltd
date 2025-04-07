@@ -1,9 +1,9 @@
 import React from "react";
 const Contectus = () => {
-    return(
-<>
-  {/* Contact Us Section */}
-  <section className="bg-white py-20 px-4 md:px-20">
+  return (
+    <>
+      {/* Contact Us Section */}
+      <section className="bg-white py-20 px-4 md:px-20">
         <h2 className="text-2xl md:text-3xl text-center text-blue-900 font-semibold mb-2 relative">
           <span className="inline-block border-t border-b border-blue-500 px-4 py-2">
             Contact Us
@@ -47,7 +47,7 @@ const Contectus = () => {
           </div>
         </form>
       </section>
-</>
-    )
-}
+    </>
+  );
+};
 export default Contectus;

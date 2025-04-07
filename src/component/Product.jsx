@@ -1,31 +1,20 @@
 import React from "react";
 import newPro from "../assets/newProduct/newProduct.jpg";
+import mostPopular from "../assets/mostPopular/mostPopular.jpg";
+import bestValue from "../assets/newProducts/newProduct.jpg";
 const Product = () => {
-    return(
-<>
-     {/* Product Highlights Section */}
+  return (
+    <>
+      {/* Product Highlights Section */}
       <section className="bg-gray-100 py-16 px-4 md:px-20 ">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="relative group">
             <img
               src={newPro}
-              alt="New Products"
-              className="w-full rounded-lg shadow-md"
-            />
-            <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center rounded-lg">
-              <h3 className="text-white text-2xl font-semibold">
-                New Products
-              </h3>
-            </div>
-          </div>
-
-          <div className="relative group">
-            <img
-              src="/most-popular.jpg"
               alt="Most Popular"
               className="w-full h-80 object-cover rounded-lg shadow-lg"
             />
-            <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center rounded-lg">
+            <div className="absolute inset-0  bg-opacity-40 flex items-center justify-center rounded-lg">
               <h3 className="text-white text-2xl font-semibold">
                 Most Popular
               </h3>
@@ -34,11 +23,24 @@ const Product = () => {
 
           <div className="relative group">
             <img
-              src="/best-value.jpg"
+              src={mostPopular}
+              alt="Most Popular"
+              className="w-full h-80 object-cover rounded-lg shadow-lg"
+            />
+            <div className="absolute inset-0  bg-opacity-40 flex items-center justify-center rounded-lg">
+              <h3 className="text-white text-2xl font-semibold">
+                Most Popular
+              </h3>
+            </div>
+          </div>
+
+          <div className="relative group">
+            <img
+              src={bestValue}
               alt="Best Value"
               className="w-full h-80 object-cover rounded-lg shadow-lg"
             />
-            <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center rounded-lg">
+            <div className="absolute inset-0  bg-opacity-40 flex items-center justify-center rounded-lg">
               <h3 className="text-white text-2xl font-semibold">Best Value</h3>
             </div>
           </div>
@@ -65,7 +67,7 @@ const Product = () => {
           Contact Us
         </button>
       </section>
-</>
-    )
-}
+    </>
+  );
+};
 export default Product;
