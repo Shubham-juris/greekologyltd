@@ -1,14 +1,14 @@
 import React from "react";
 import Navigation from "./Navigation";
+import bgImage from "../assets/bgFooter/bgFooter.jpg"
 const Hero = () => {
   return (
     <div
       className="min-h-screen bg-cover bg-center"
       style={{
-        backgroundImage:
-          'url("https://www.istockphoto.com/resources/images/PhotoFTLP/Header-614041282-India.jpg")',
+        backgroundImage:`url(${bgImage})`
       }}
-    >
+    > 
       <Navigation />
       {/* Hero Section */}
       <div className="flex items-center justify-center h-[calc(100vh-80px)] text-white text-center px-4">
