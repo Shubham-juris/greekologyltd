@@ -22,8 +22,9 @@ const Hero = () => {
   };
 
   return (
+  
     <motion.div
-      className="min-h-screen bg-cover bg-center relative"
+      className="min-h-screen  bg-cover bg-center relative"
       style={{ backgroundImage: `url(${bgImage})` }}
       variants={heroVariants}
       initial="initial"
@@ -37,7 +38,7 @@ const Hero = () => {
           style={{ backdropFilter: 'blur(10px)' }} // Add a subtle blur to the background
         >
           <motion.h1
-            className="text-3xl md:text-4xl font-bold mb-4"
+            className="text-7xl justify-center mx-auto md:text-4xl font-bold mb-4"
             variants={textVariants}
             initial="initial"
             animate="animate"
@@ -83,6 +84,7 @@ const Hero = () => {
         animate={{ x: 0, y: 0, transition: { duration: 4, ease: "easeInOut", repeat: Infinity, repeatType: "mirror", delay: 0.5 } }}
       />
     </motion.div>
+    
   );
 };
 

@@ -47,6 +47,7 @@ const Appointments = () => {
 
   return (
     <>
+    <div className="container mx-auto">
       {/* Appointments & Welcome Section */}
       <motion.section
         className="bg-gray-100 py-16 px-4 md:px-20"
@@ -164,6 +165,7 @@ const Appointments = () => {
           Find out more
         </motion.button>
       </motion.section>
+      </div>
     </>
   );
 };

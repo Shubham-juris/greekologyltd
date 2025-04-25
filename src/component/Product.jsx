@@ -40,6 +40,7 @@ const Product = () => {
 
   return (
     <>
+    <div className="container mx-auto">
       {/* Product Highlights Section */}
       <motion.section
         className="bg-gray-100 py-16 px-4 md:px-20 "
@@ -140,6 +141,7 @@ const Product = () => {
           Contact Us
         </motion.button>
       </motion.section>
+      </div>
     </>
   );
 };
