@@ -24,6 +24,7 @@ const About = () => {
   };
 
   return (
+    <div className="container mx-auto">
     <motion.section
       className="py-16 bg-white px-4 md:px-20"
       variants={sectionVariants}
@@ -43,7 +44,7 @@ const About = () => {
         </span>
       </motion.h2>
 
-      <div className="flex flex-col md:flex-row items-center gap-10">
+      <div className="flex  flex-col md:flex-row items-center gap-10">
         <motion.div
           className="w-full md:w-1/2"
           variants={imageVariants}
@@ -76,6 +77,7 @@ const About = () => {
         </motion.div>
       </div>
     </motion.section>
+    </div> 
   );
 };
 
