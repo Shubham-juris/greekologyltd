@@ -113,7 +113,7 @@ const Subscribe = () => {
         animate="animate"
       >
         <motion.p className="mb-2" variants={textVariants} initial="initial" animate="animate">
-          Copyright © 2025 Greekology - All Rights Reserved.
+          Copyright © 2023 Greekology - All Rights Reserved.
         </motion.p>
         <div className="flex justify-center space-x-6 mb-4">
           <motion.a
