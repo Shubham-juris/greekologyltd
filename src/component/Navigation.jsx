@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import logo from "../../src/assets/Logo/greeklogy.jpg"
+import logoImg from "../assets/footerImage/footerImage.jpg";
+
 
 const Navigation = () => {
   return (
@@ -13,7 +14,7 @@ const Navigation = () => {
       {/* Logo & Brand */}
       <div className="flex items-center">
         <motion.img
-          src={logo}
+          src={logoImg}
           alt="Greekology Logo"
           className="h-10 w-auto mr-4 rounded-full"
           whileHover={{ scale: 1.1 }}
