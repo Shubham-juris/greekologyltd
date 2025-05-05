@@ -13,6 +13,7 @@ import logo from "../../src/assets/Logo/Greekology.jpg";
   {/* Logo Placeholder - Replace with your image URL */}
   <motion.img
   src={logo}
+  
   alt="Logo"
   className="h-10 w-auto mr-4 rounded-full" 
   whileHover={{ scale: 1.1 }}
