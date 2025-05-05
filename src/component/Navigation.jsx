@@ -1,6 +1,6 @@
 import React from "react";
  import { motion } from "framer-motion";
-import logo from "../../src/assets/home/logo.png"
+import logo from "../../src/assets/Logo/Greekology.jpg";
  const Navigation = () => {
   return (
   <motion.nav
@@ -14,10 +14,11 @@ import logo from "../../src/assets/home/logo.png"
   <motion.img
   src={logo}
   alt="Logo"
-  className="h-10 w-auto mr-4" // Adjust size as needed
+  className="h-10 w-auto mr-4 rounded-full" 
   whileHover={{ scale: 1.1 }}
   transition={{ type: "spring", stiffness: 250, damping: 10 }}
-  />
+/>
+
   <div className="text-2xl font-semibold text-blue-800">Greekology</div>
   </div>
   <ul className="hidden md:flex space-x-6 text-gray-700">
