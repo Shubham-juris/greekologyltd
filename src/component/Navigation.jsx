@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import logo from "../../src/assets/Logo/greeklogy.webp"
+import logo from "../../src/assets/Logo/Logo.png";
 
 const Navigation = () => {
   return (
