@@ -48,6 +48,21 @@ const Footer = () => {
   };
 
   return (
+    {/* Google Map Embed for Drayton Valley Location */}
+<div className="mt-12">
+  <iframe
+    title="Trafficology Drayton Valley Location"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2431.5863471919986!2d-115.0494549230017!3d52.97262827179845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x539ff4a1f76339f5%3A0x801d27f3349c7b0a!2s5211%2050%20St%2C%20Drayton%20Valley%2C%20AB%20T7A%201C9%2C%20Canada!5e0!3m2!1sen!2sca!4v1715083507585"
+    width="100%"
+    height="300"
+    style={{ border: 0 }}
+    allowFullScreen=""
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+    className="rounded-lg shadow-md"
+  />
+</div>
+
     <motion.section
       className="bg-gradient-to-br from-blue-50 to-white py-20 px-6 md:px-20 text-center"
       variants={sectionVariants}
