@@ -1,11 +1,18 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom"; // ✅ Import Link
 import logo from "../../src/assets/Logo/Logo.png";
 
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const navItems = ["Home", "Shop", "About", "Contact", "Blog"];
+
+  const navItems = [
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Contact", path: "/contact" },
+    { name: "Services", path: "/services" },
+  ];
 
   return (
     <motion.nav
@@ -35,12 +42,12 @@ const Navigation = () => {
             whileHover={{ scale: 1.1 }}
             transition={{ type: "spring", stiffness: 250, damping: 10 }}
           >
-            {item}
+            <Link to={item.path}>{item.name}</Link> {/* ✅ Wrapped with Link */}
           </motion.li>
         ))}
       </ul>
 
-      {/* Contact (text only) */}
+      {/* Contact Info */}
       <div className="hidden sm:flex items-center space-x-4 text-sm text-blue-700">
         <span className="hidden sm:inline">+1 (780) 234-4167</span>
       </div>
@@ -67,7 +74,8 @@ const Navigation = () => {
                 className="hover:text-blue-600 cursor-pointer"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                {item}
+                <Link to={item.path}>{item.name}</Link>{" "}
+                {/* ✅ Link in mobile too */}
               </li>
             ))}
             <div className="flex flex-col pt-2 text-sm text-blue-700">

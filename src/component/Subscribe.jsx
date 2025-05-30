@@ -5,27 +5,47 @@ import BgImg from "../assets/BG/DiscoverImg.jpg";
 const Subscribe = () => {
   const subscribeVariants = {
     initial: { opacity: 0, y: 50 },
-    animate: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeInOut" } },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.7, ease: "easeInOut" },
+    },
   };
 
   const headingVariants = {
     initial: { opacity: 0, scale: 0.9 },
-    animate: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: "easeOut" } },
+    animate: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
   };
 
   const textVariants = {
     initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeInOut", delay: 0.2 } },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeInOut", delay: 0.2 },
+    },
   };
 
   const inputVariants = {
     initial: { opacity: 0, x: -30 },
-    animate: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeInOut" } },
+    animate: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.6, ease: "easeInOut" },
+    },
   };
 
   const buttonVariants = {
     initial: { opacity: 0, scale: 0.8 },
-    animate: { opacity: 1, scale: 1, transition: { type: "spring", stiffness: 200, damping: 15, delay: 0.4 } },
+    animate: {
+      opacity: 1,
+      scale: 1,
+      transition: { type: "spring", stiffness: 200, damping: 15, delay: 0.4 },
+    },
     hover: { scale: 1.05 },
     tap: { scale: 0.95 },
   };
@@ -100,37 +120,7 @@ const Subscribe = () => {
         </div>
       </motion.section>
 
-      {/* Footer */}
-      <motion.footer
-        className="bg-white text-center py-6 text-sm text-gray-600"
-        variants={footerVariants}
-        initial="initial"
-        animate="animate"
-      >
-        <motion.p className="mb-2" variants={textVariants} initial="initial" animate="animate">
-          © 2023 Greekology - All Rights Reserved.
-        </motion.p>
-        <div className="flex justify-center space-x-6">
-          <motion.a
-            href="#"
-            className="hover:text-blue-700"
-            variants={linkVariants}
-            whileHover="hover"
-            whileTap="tap"
-          >
-            Privacy Policy
-          </motion.a>
-          <motion.a
-            href="#"
-            className="hover:text-blue-700"
-            variants={linkVariants}
-            whileHover="hover"
-            whileTap="tap"
-          >
-            Terms and Conditions
-          </motion.a>
-        </div>
-      </motion.footer>
+
     </>
   );
 };

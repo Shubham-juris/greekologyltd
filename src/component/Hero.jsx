@@ -22,11 +22,9 @@ const Hero = () => {
             Empowering Your Business with Reliable IT Solutions
           </h1>
           <p className="text-sm sm:text-base md:text-lg mb-8 max-w-lg mx-auto">
-            Secure IT systems tailored for your business success. Let us help you navigate the digital world with confidence.
+            Secure IT systems tailored for your business success. Let us help
+            you navigate the digital world with confidence.
           </p>
-          <button className="bg-white text-blue-900 px-8 py-3 rounded-full font-semibold text-lg hover:bg-blue-100 transition">
-            Get Started
-          </button>
         </div>
       </div>
 

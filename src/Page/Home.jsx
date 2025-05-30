@@ -2,11 +2,12 @@ import React from "react";
 import About from "../component/About";
 import Appointments from "../component/Appointments";
 import Contectus from "../component/Contectus";
-import Footer from "../component/Footer";
+
 import Hero from "../component/Hero";
 import Product from "../component/Product";
 import Subscribe from "../component/Subscribe";
 import Testimonials from "../component/Testimonials";
+import FooterComponent from "../component/FooterComponent";
 const Home = () => {
   return (
     <>
@@ -16,8 +17,8 @@ const Home = () => {
       <Appointments />
       <Product />
       <Contectus />
-      <Footer />
       <Subscribe />
+      <FooterComponent />
     </>
   );
 };
