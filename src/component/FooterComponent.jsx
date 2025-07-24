@@ -14,8 +14,6 @@ const FooterComponent = () => {
         <div>
           <h2 className="text-2xl font-bold text-white mb-4">Greekology</h2>
           <p className="text-sm">
-            Empowering your global journey through expert guidance in education,
-            visa processing, and international opportunities.
           </p>
         </div>
 
