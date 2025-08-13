@@ -13,7 +13,8 @@ const FooterComponent = () => {
         {/* Logo & About */}
         <div>
           <h2 className="text-2xl font-bold text-white mb-4">Greekology</h2>
-          <p className="text-sm">
+          <p className="text-sm leading-relaxed">
+            Greekology is your trusted IT partner delivering innovative, secure, and scalable technology solutions.
           </p>
         </div>
 
@@ -22,24 +23,16 @@ const FooterComponent = () => {
           <h3 className="text-lg font-semibold text-white mb-4">Quick Links</h3>
           <ul className="space-y-2 text-sm">
             <li>
-              <a href="/" className="hover:text-white">
-                Home
-              </a>
+              <a href="/" className="hover:text-white">Home</a>
             </li>
             <li>
-              <a href="/about" className="hover:text-white">
-                About Us
-              </a>
+              <a href="/about" className="hover:text-white">About Us</a>
             </li>
             <li>
-              <a href="/services" className="hover:text-white">
-                Services
-              </a>
+              <a href="/services" className="hover:text-white">Services</a>
             </li>
             <li>
-              <a href="/contact" className="hover:text-white">
-                Contact
-              </a>
+              <a href="/contact" className="hover:text-white">Contact</a>
             </li>
           </ul>
         </div>
@@ -59,13 +52,12 @@ const FooterComponent = () => {
             </li>
             <li>
               Phone:{" "}
-              <a href="tel:+1234567890" className="hover:text-white">
+              <a href="tel:+17802344167" className="hover:text-white">
                 +1 (780) 234-4167
               </a>
             </li>
             <li>
-              Address: 5211 50 ST. Drayton Valley, <br /> Alberta, T7A 1C9
-              Canada
+              Address: 5211 50 ST. Drayton Valley,<br /> Alberta, T7A 1C9 Canada
             </li>
           </ul>
         </div>
@@ -82,6 +74,12 @@ const FooterComponent = () => {
             >
               <FaFacebookF />
             </a>
+            {/* Optional additional icons */}
+            {/* 
+            <a href="#" className="hover:text-white"><FaInstagram /></a>
+            <a href="#" className="hover:text-white"><FaLinkedinIn /></a>
+            <a href="#" className="hover:text-white"><FaTwitter /></a> 
+            */}
           </div>
         </div>
       </div>
