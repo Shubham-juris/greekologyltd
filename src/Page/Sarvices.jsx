@@ -10,6 +10,7 @@ import {
   PieChart,
   UserCheck,
   Wrench,
+  ChevronDown,
 } from "lucide-react";
 
 import Navigation from "../component/Navigation";
@@ -22,44 +23,28 @@ const services = [
     title: "Custom Software Development",
     description:
       "Tailored software solutions to automate processes and boost business efficiency.",
-    features: [
-      "Enterprise-grade apps",
-      "Scalable architecture",
-      "Cross-platform development",
-    ],
+    features: ["Enterprise-grade apps", "Scalable architecture", "Cross-platform development"],
   },
   {
     icon: <Cloud className="w-8 h-8 text-blue-600" />,
     title: "Cloud Solutions",
     description:
       "Scalable cloud infrastructure and services including AWS, Azure, and Google Cloud.",
-    features: [
-      "Cloud migration",
-      "DevOps & CI/CD",
-      "Cloud-native app development",
-    ],
+    features: ["Cloud migration", "DevOps & CI/CD", "Cloud-native app development"],
   },
   {
     icon: <Server className="w-8 h-8 text-blue-600" />,
     title: "IT Consulting",
     description:
       "Professional IT strategy and planning to align with your business goals.",
-    features: [
-      "Digital transformation",
-      "Technology roadmap",
-      "Infrastructure audits",
-    ],
+    features: ["Digital transformation", "Technology roadmap", "Infrastructure audits"],
   },
   {
     icon: <ShieldCheck className="w-8 h-8 text-blue-600" />,
     title: "Cybersecurity Services",
     description:
       "Protect your digital assets with robust security audits and threat monitoring.",
-    features: [
-      "Vulnerability scanning",
-      "Risk assessment",
-      "Compliance & data protection",
-    ],
+    features: ["Vulnerability scanning", "Risk assessment", "Compliance & data protection"],
   },
   {
     icon: <MonitorSmartphone className="w-8 h-8 text-blue-600" />,
@@ -73,11 +58,7 @@ const services = [
     title: "Data Management",
     description:
       "Organize, analyze, and leverage data for business intelligence and insights.",
-    features: [
-      "ETL processes",
-      "Big data handling",
-      "Dashboard & reporting",
-    ],
+    features: ["ETL processes", "Big data handling", "Dashboard & reporting"],
   },
   {
     icon: <Activity className="w-8 h-8 text-blue-600" />,
@@ -109,23 +90,7 @@ const services = [
   },
 ];
 
-// Reusable Card Component
-const ServiceCard = ({ icon, title, description, features }) => (
-  <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 text-left">
-    <div className="mb-4 flex justify-center">{icon}</div>
-    <h3 className="text-xl font-semibold text-gray-800 mb-2 text-center">
-      {title}
-    </h3>
-    <p className="text-gray-600 text-sm mb-4 text-center">{description}</p>
-    <ul className="list-disc pl-5 text-sm text-gray-500 space-y-1">
-      {features.map((item, idx) => (
-        <li key={idx}>{item}</li>
-      ))}
-    </ul>
-  </div>
-);
-
-// FAQ Section
+// FAQ Data
 const faqs = [
   {
     question: "What industries do you specialize in?",
@@ -144,29 +109,19 @@ const faqs = [
   },
 ];
 
-// Testimonial Component
-const testimonials = [
-  {
-    name: "Rahul Mehta",
-    title: "CTO, TechVerse",
-    feedback:
-      "Greekology helped us migrate our infrastructure to AWS and the experience was flawless. Great team!",
-  },
-  {
-    name: "Alicia Brown",
-    title: "Founder, SmartLearn",
-    feedback:
-      "The custom LMS they built for us exceeded our expectations. Secure, scalable, and elegant!",
-  },
-];
-
-// Why Choose Us Section
-const reasons = [
-  "Certified and experienced professionals",
-  "Client-first approach with transparent communication",
-  "Use of latest tech stack & industry best practices",
-  "Timely delivery and 24/7 support",
-];
+// Service Card Component
+const ServiceCard = ({ icon, title, description, features }) => (
+  <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 text-left">
+    <div className="mb-4 flex justify-center">{icon}</div>
+    <h3 className="text-xl font-semibold text-gray-800 mb-2 text-center">{title}</h3>
+    <p className="text-gray-600 text-sm mb-4 text-center">{description}</p>
+    <ul className="list-disc pl-5 text-sm text-gray-500 space-y-1">
+      {features.map((item, idx) => (
+        <li key={idx}>{item}</li>
+      ))}
+    </ul>
+  </div>
+);
 
 const Services = () => {
   return (
@@ -186,12 +141,10 @@ const Services = () => {
       {/* Services */}
       <section className="bg-gray-50 py-20 px-4 md:px-10 lg:px-20">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">
-            Our Services
-          </h2>
+          <h2 className="text-4xl font-bold text-gray-800 mb-4">Our Services</h2>
           <p className="text-gray-600 mb-12 max-w-2xl mx-auto">
-            At Greekology, we provide end-to-end IT solutions to help businesses
-            grow, scale, and stay secure in the digital world.
+            At Greekology, we provide end-to-end IT solutions to help businesses grow, scale,
+            and stay secure in the digital world.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
             {services.map((service, index) => (
@@ -201,50 +154,55 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Why Choose Us */}
+      {/* Why Choose Us - Redesigned */}
       <section className="bg-white py-20 px-4 md:px-10 lg:px-20">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6 text-gray-800">
-            Why Choose Greekology?
-          </h2>
-          <ul className="list-disc text-left max-w-xl mx-auto text-gray-600 space-y-2 pl-6">
-            {reasons.map((reason, index) => (
-              <li key={index}>{reason}</li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="bg-gray-100 py-20 px-4 md:px-10 lg:px-20">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-gray-800 mb-6">FAQs</h2>
-          <div className="space-y-6 text-left">
-            {faqs.map((faq, index) => (
-              <div key={index}>
-                <h4 className="font-semibold text-gray-700">{faq.question}</h4>
-                <p className="text-gray-600">{faq.answer}</p>
-              </div>
-            ))}
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-gray-800 mb-12">Why Choose Greekology?</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transition">
+              <ShieldCheck className="w-10 h-10 text-blue-600 mx-auto mb-4" />
+              <h4 className="font-semibold text-lg text-gray-800 mb-2">Certified Experts</h4>
+              <p className="text-gray-600 text-sm">
+                Our team consists of certified professionals with deep industry knowledge.
+              </p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transition">
+              <UserCheck className="w-10 h-10 text-blue-600 mx-auto mb-4" />
+              <h4 className="font-semibold text-lg text-gray-800 mb-2">Client-First Approach</h4>
+              <p className="text-gray-600 text-sm">
+                We believe in transparency and always prioritize your business needs.
+              </p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transition">
+              <Code className="w-10 h-10 text-blue-600 mx-auto mb-4" />
+              <h4 className="font-semibold text-lg text-gray-800 mb-2">Modern Tech Stack</h4>
+              <p className="text-gray-600 text-sm">
+                We leverage cutting-edge tools and best practices for scalable solutions.
+              </p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transition">
+              <Activity className="w-10 h-10 text-blue-600 mx-auto mb-4" />
+              <h4 className="font-semibold text-lg text-gray-800 mb-2">24/7 Support</h4>
+              <p className="text-gray-600 text-sm">
+                Our support team is available round the clock to resolve your issues.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="bg-white py-20 px-4 md:px-10 lg:px-20">
+      {/* FAQs - Styled */}
+      <section className="bg-gray-100 py-20 px-4 md:px-10 lg:px-20">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-gray-800 mb-6">
-            What Our Clients Say
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {testimonials.map((t, index) => (
-              <div
-                key={index}
-                className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transition"
-              >
-                <p className="text-gray-700 italic mb-4">"{t.feedback}"</p>
-                <h5 className="font-semibold text-gray-800">{t.name}</h5>
-                <span className="text-sm text-gray-500">{t.title}</span>
+          <h2 className="text-3xl font-bold text-gray-800 mb-12">Frequently Asked Questions</h2>
+          <div className="space-y-6 text-left">
+            {faqs.map((faq, index) => (
+              <div key={index} className="bg-white rounded-lg shadow p-6">
+                <h4 className="flex items-center justify-between font-semibold text-gray-800 text-lg mb-2">
+                  {faq.question}
+                  <ChevronDown className="w-5 h-5 text-blue-500" />
+                </h4>
+                <p className="text-gray-600 text-sm">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -254,12 +212,8 @@ const Services = () => {
       {/* Call to Action */}
       <section className="bg-blue-600 text-white py-16 text-center">
         <div className="max-w-3xl mx-auto px-4">
-          <h3 className="text-3xl font-bold mb-4">
-            Ready to Transform Your Business?
-          </h3>
-          <p className="mb-6">
-            Get in touch with our team and let's build something great together.
-          </p>
+          <h3 className="text-3xl font-bold mb-4">Ready to Transform Your Business?</h3>
+          <p className="mb-6">Get in touch with our team and let's build something great together.</p>
           <a
             href="/contact"
             className="inline-block bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
