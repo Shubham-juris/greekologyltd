@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Server,
   ShieldCheck,
@@ -12,7 +12,7 @@ import {
   Wrench,
   ChevronDown,
 } from "lucide-react";
-
+import { motion } from "framer-motion";
 import Navigation from "../component/Navigation";
 import FooterComponent from "../component/FooterComponent";
 
@@ -81,13 +81,6 @@ const services = [
       "24/7 technical support to ensure your IT systems run smoothly at all times.",
     features: ["On-call engineers", "SLAs", "Issue tracking"],
   },
-  {
-    icon: <Wrench className="w-8 h-8 text-blue-600" />,
-    title: "IT Maintenance",
-    description:
-      "Routine system maintenance and updates to prevent breakdowns and data loss.",
-    features: ["Patch management", "System upgrades", "Proactive alerts"],
-  },
 ];
 
 // FAQ Data
@@ -111,7 +104,13 @@ const faqs = [
 
 // Service Card Component
 const ServiceCard = ({ icon, title, description, features }) => (
-  <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 text-left">
+  <motion.div
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.5 }}
+    className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 text-left"
+  >
     <div className="mb-4 flex justify-center">{icon}</div>
     <h3 className="text-xl font-semibold text-gray-800 mb-2 text-center">{title}</h3>
     <p className="text-gray-600 text-sm mb-4 text-center">{description}</p>
@@ -120,28 +119,47 @@ const ServiceCard = ({ icon, title, description, features }) => (
         <li key={idx}>{item}</li>
       ))}
     </ul>
-  </div>
+  </motion.div>
 );
 
 const Services = () => {
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggleFAQ = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   return (
     <>
       <Navigation />
 
       {/* Hero */}
-      <section className="bg-blue-600 text-white py-16 text-center">
+      <motion.section
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        className="bg-blue-600 text-white py-16 text-center"
+      >
         <div className="max-w-4xl mx-auto px-4">
           <h1 className="text-5xl font-bold mb-4">Complete IT Solutions</h1>
           <p className="text-lg">
             Empowering your business with reliable and secure technology services.
           </p>
         </div>
-      </section>
+      </motion.section>
 
       {/* Services */}
       <section className="bg-gray-50 py-20 px-4 md:px-10 lg:px-20">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">Our Services</h2>
+          <motion.h2
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl font-bold text-gray-800 mb-4"
+          >
+            Our Services
+          </motion.h2>
           <p className="text-gray-600 mb-12 max-w-2xl mx-auto">
             At Greekology, we provide end-to-end IT solutions to help businesses grow, scale,
             and stay secure in the digital world.
@@ -154,9 +172,15 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Why Choose Us - Redesigned */}
+      {/* Why Choose Us */}
       <section className="bg-white py-20 px-4 md:px-10 lg:px-20">
-        <div className="max-w-6xl mx-auto text-center">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-6xl mx-auto text-center"
+        >
           <h2 className="text-3xl font-bold text-gray-800 mb-12">Why Choose Greekology?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transition">
@@ -188,29 +212,57 @@ const Services = () => {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
-      {/* FAQs - Styled */}
+      {/* FAQs */}
       <section className="bg-gray-100 py-20 px-4 md:px-10 lg:px-20">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-gray-800 mb-12">Frequently Asked Questions</h2>
           <div className="space-y-6 text-left">
             {faqs.map((faq, index) => (
-              <div key={index} className="bg-white rounded-lg shadow p-6">
-                <h4 className="flex items-center justify-between font-semibold text-gray-800 text-lg mb-2">
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4 }}
+                className="bg-white rounded-lg shadow p-6 cursor-pointer"
+                onClick={() => toggleFAQ(index)}
+              >
+                <div className="flex items-center justify-between font-semibold text-gray-800 text-lg">
                   {faq.question}
-                  <ChevronDown className="w-5 h-5 text-blue-500" />
-                </h4>
-                <p className="text-gray-600 text-sm">{faq.answer}</p>
-              </div>
+                  <ChevronDown
+                    className={`w-5 h-5 text-blue-500 transform transition-transform ${
+                      openIndex === index ? "rotate-180" : ""
+                    }`}
+                  />
+                </div>
+                {openIndex === index && (
+                  <motion.p
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="text-gray-600 text-sm mt-2"
+                  >
+                    {faq.answer}
+                  </motion.p>
+                )}
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Call to Action */}
-      <section className="bg-blue-600 text-white py-16 text-center">
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="bg-blue-600 text-white py-16 text-center"
+      >
         <div className="max-w-3xl mx-auto px-4">
           <h3 className="text-3xl font-bold mb-4">Ready to Transform Your Business?</h3>
           <p className="mb-6">Get in touch with our team and let's build something great together.</p>
@@ -221,7 +273,7 @@ const Services = () => {
             Contact Us
           </a>
         </div>
-      </section>
+      </motion.section>
 
       <FooterComponent />
     </>
