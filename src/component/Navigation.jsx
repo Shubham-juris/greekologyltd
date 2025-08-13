@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
-import { Link } from "react-router-dom"; // ✅ Import Link
+import { Menu, X, Phone } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../../src/assets/Logo/Logo.png";
 
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   const navItems = [
     { name: "Home", path: "/" },
@@ -33,23 +34,36 @@ const Navigation = () => {
         <div className="text-2xl font-semibold text-blue-800">Greekology</div>
       </div>
 
-      {/* Desktop Navigation Links */}
+      {/* Desktop Navigation */}
       <ul className="hidden md:flex space-x-6 text-gray-700">
         {navItems.map((item, index) => (
           <motion.li
             key={index}
-            className="hover:text-blue-600 cursor-pointer"
+            className={`cursor-pointer hover:text-blue-600 relative ${
+              location.pathname === item.path ? "text-blue-600 font-semibold" : ""
+            }`}
             whileHover={{ scale: 1.1 }}
             transition={{ type: "spring", stiffness: 250, damping: 10 }}
           >
-            <Link to={item.path}>{item.name}</Link> {/* ✅ Wrapped with Link */}
+            <Link to={item.path}>
+              {item.name}
+              {location.pathname === item.path && (
+                <span className="absolute bottom-[-6px] left-0 w-full h-1 bg-blue-600 rounded-full"></span>
+              )}
+            </Link>
           </motion.li>
         ))}
       </ul>
 
-      {/* Contact Info */}
-      <div className="hidden sm:flex items-center space-x-4 text-sm text-blue-700">
-        <span className="hidden sm:inline">+1 (780) 234-4167</span>
+      {/* Desktop Call Button */}
+      <div className="hidden sm:flex items-center">
+        <a
+          href="tel:+17802344167"
+          className="flex items-center space-x-2 bg-blue-600 text-white text-sm px-4 py-2 rounded-full hover:bg-blue-700 transition"
+        >
+          <Phone size={16} />
+          <span>+1 (780) 234-4167</span>
+        </a>
       </div>
 
       {/* Mobile Menu Toggle */}
@@ -59,7 +73,7 @@ const Navigation = () => {
         </button>
       </div>
 
-      {/* Mobile Menu Items */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.ul
@@ -71,15 +85,24 @@ const Navigation = () => {
             {navItems.map((item, index) => (
               <li
                 key={index}
-                className="hover:text-blue-600 cursor-pointer"
+                className={`hover:text-blue-600 cursor-pointer ${
+                  location.pathname === item.path ? "text-blue-600 font-semibold" : ""
+                }`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                <Link to={item.path}>{item.name}</Link>{" "}
-                {/* ✅ Link in mobile too */}
+                <Link to={item.path}>{item.name}</Link>
               </li>
             ))}
-            <div className="flex flex-col pt-2 text-sm text-blue-700">
-              <span>+1 (780) 234-4167</span>
+
+            {/* Mobile Call Button */}
+            <div className="pt-4">
+              <a
+                href="tel:+17802344167"
+                className="flex justify-center items-center space-x-2 w-full bg-blue-600 text-white text-sm px-4 py-2 rounded-full hover:bg-blue-700 transition"
+              >
+                <Phone size={16} />
+                <span>+1 (780) 234-4167</span>
+              </a>
             </div>
           </motion.ul>
         )}
