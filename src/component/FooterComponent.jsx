@@ -65,42 +65,42 @@ const FooterComponent = () => {
         </div>
 
         {/* Social Media */}
-        <div>
+        <div className="col-md-4 mb-3 mb-md-0">
           <h3 className="text-lg font-semibold text-white mb-4">Follow Us</h3>
-         <div className="d-flex justify-content-center gap-4 text-xl">
-    {/* Facebook */}
-    <a
-      href="https://www.facebook.com/Greekology01/"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-white hover-opacity"
-      aria-label="Facebook"
-    >
-      <FaFacebookF size={24} />
-    </a>
-
-    {/* Instagram */}
-    <a
-      href="https://www.instagram.com/greekology_321/"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-white hover-opacity"
-      aria-label="Instagram"
-    >
-      <FaInstagram size={24} />
-    </a>
-
-    {/* X (Twitter) */}
-    <a
-      href="https://x.com/Greekology60715"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-white hover-opacity"
-      aria-label="X (Twitter)"
-    >
-      <FaXTwitter size={24} />
-    </a>
-  </div>
+          <div className="d-flex justify-content-center gap-4 text-xl">
+            {/* Facebook */}
+            <a
+              href="https://www.facebook.com/Greekology01/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover-opacity"
+              aria-label="Facebook"
+            >
+              <FaFacebookF size={24} />
+            </a>
+        
+            {/* Instagram */}
+            <a
+              href="https://www.instagram.com/greekology_321/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover-opacity"
+              aria-label="Instagram"
+            >
+              <FaInstagram size={24} />
+            </a>
+        
+            {/* X (Twitter) */}
+            <a
+              href="https://x.com/Greekology60715"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover-opacity"
+              aria-label="X (Twitter)"
+            >
+              <FaXTwitter size={24} />
+            </a>
+          </div>
         </div>
       </div>
 
